@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 
 function Todos() {
 
-    const [task, setTask] = useState(JSON.parse(localStorage.getItem("user")) || 0);
+    const [task, setTask] = useState([]);
 
 
     const handleAdd = () => {
@@ -32,8 +32,8 @@ function Todos() {
     }
 
     useEffect(()=>{
-        localStorage.setItem("user", JSON.stringify(task))
-    },[task])
+        handleAdd()
+    },[])
 
   
 
